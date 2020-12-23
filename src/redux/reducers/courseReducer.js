@@ -4,11 +4,17 @@ const initState = {
   },
 };
 
-const courseReducer = (state = [], action) => {
-  // const courseReducer = (state = initState, action) => {
+// const courseReducer = (state = [], action) => {
+const courseReducer = (state = initState, action) => {
   switch (action.type) {
     case 'CREATE_COURSE':
-      return [...state, action.payload.course];
+      return {
+        ...state,
+        course: {
+          ...state.course,
+          title: action.payload.courseTitle,
+        },
+      };
     // return {
     //   ...state,
     //   course: [state.course, action.payload.course],

@@ -6,7 +6,7 @@ import {createCourse} from '../../redux/actions/courseActions';
 const CoursesPage = () => {
   const [courseTitle, setCourseTitle] = useState('');
   const dispatch = useDispatch();
-  const courses = useSelector((state) => state.courses);
+  const course = useSelector((state) => state.courses.course);
 
   const handleChange = (e) => {
     setCourseTitle(e.target.value);
@@ -16,7 +16,6 @@ const CoursesPage = () => {
     e.preventDefault();
     dispatch(createCourse(courseTitle));
     setCourseTitle('');
-    console.log(courses);
   };
 
   return (
@@ -26,9 +25,6 @@ const CoursesPage = () => {
         <h3>Add Courses</h3>
         <input type='text' onChange={handleChange} value={courseTitle} />
         <input type='submit' value='Save' />
-        {courses.map((course) => (
-          <div key={course}>{course}</div>
-        ))}
       </form>
     </div>
   );
