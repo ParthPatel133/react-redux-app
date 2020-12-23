@@ -16,7 +16,6 @@ const CoursesPage = () => {
     e.preventDefault();
     dispatch(createCourse(courseTitle));
     setCourseTitle('');
-    console.log(courses);
   };
 
   return (
