@@ -6,3 +6,11 @@ export const createCourse = (course) => {
     },
   };
 };
+// export const createCourse = (course) => (dispatch) => {
+//   dispatch({
+//     type: 'CREATE_COURSE',
+//     payload: {
+//       course,
+//     },
+//   });
+// };
