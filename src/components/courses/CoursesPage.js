@@ -16,6 +16,7 @@ const CoursesPage = () => {
     e.preventDefault();
     dispatch(createCourse(courseTitle));
     setCourseTitle('');
+    console.log(courses);
   };
 
   return (
@@ -26,7 +27,7 @@ const CoursesPage = () => {
         <input type='text' onChange={handleChange} value={courseTitle} />
         <input type='submit' value='Save' />
         {courses.map((course) => (
-          <div key={course.title}>{course.title}</div>
+          <div key={course}>{course}</div>
         ))}
       </form>
     </div>
