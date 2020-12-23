@@ -26,9 +26,9 @@ const CoursesPage = () => {
         <h3>Add Courses</h3>
         <input type='text' onChange={handleChange} value={courseTitle} />
         <input type='submit' value='Save' />
-        {courses.map((course) => (
+        {/*courses.map((course) => (
           <div key={course}>{course}</div>
-        ))}
+        ))*/}
       </form>
     </div>
   );
