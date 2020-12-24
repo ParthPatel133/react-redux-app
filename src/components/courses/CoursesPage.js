@@ -7,6 +7,7 @@ const CoursesPage = () => {
   const [courseState, setCourseState] = useState({
     title: '',
     description: '',
+    dropdown: '',
   });
   const dispatch = useDispatch();
   const courses = useSelector((state) => state.courses);
@@ -45,11 +46,23 @@ const CoursesPage = () => {
           value={courseState.description}
         />
         <br />
+        <select
+          name='dropdown'
+          value={courseState.dropdown}
+          onChange={handleChange}
+        >
+          <option value='grapefruit'>Grapefruit</option>
+          <option value='lime'>Lime</option>
+          <option value='coconut'>Coconut</option>
+          <option value='mango'>Mango</option>
+        </select>
+        <br />
         <input type='submit' value='Save' />
         {courses.map((course, index) => (
           <div key={index}>
             <div>title: {course.title}</div>
             <div>description: {course.description}</div>
+            <div>Option: {course.dropdown} </div>
             <br />
           </div>
         ))}
