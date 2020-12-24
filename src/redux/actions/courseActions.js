@@ -1,8 +1,8 @@
-export const createCourse = (courseTitle) => {
+export const createCourse = (course) => {
   return {
     type: 'CREATE_COURSE',
     payload: {
-      courseTitle,
+      course,
     },
   };
 };
