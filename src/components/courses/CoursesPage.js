@@ -12,12 +12,15 @@ const CoursesPage = () => {
   const courses = useSelector((state) => state.courses);
 
   const handleChange = (e) => {
-    [e.target.name] = setCourseState(e.target.value);
+    setCourseState({
+      ...courseState,
+      [e.target.name]: e.target.value,
+    });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(createCourse(course));
+    dispatch(createCourse(courseState));
     setCourseState({title: '', description: ''});
   };
 
@@ -29,18 +32,26 @@ const CoursesPage = () => {
         <input
           type='text'
           name='title'
+          placeholder='title'
           onChange={handleChange}
           value={courseState.title}
         />
+        <br />
         <input
           type='text'
+          placeholder='description'
           name='description'
           onChange={handleChange}
           value={courseState.description}
         />
+        <br />
         <input type='submit' value='Save' />
-        {courses.map((course) => (
-          <div key={course}>{course}</div>
+        {courses.map((course, index) => (
+          <div key={index}>
+            <div>title: {course.title}</div>
+            <div>description: {course.description}</div>
+            <br />
+          </div>
         ))}
       </form>
     </div>
