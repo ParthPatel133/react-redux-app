@@ -9,7 +9,7 @@ const CoursesPage = () => {
     description: '',
     dropdown: 'lime',
     date: '',
-    check1: true,
+    check1: false,
   });
   const dispatch = useDispatch();
 
