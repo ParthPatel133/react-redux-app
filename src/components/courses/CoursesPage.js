@@ -39,7 +39,7 @@ const CoursesPage = () => {
           value={courseState.title}
         />
         <br />
-        <input
+        <textarea
           type='text'
           placeholder='description'
           name='description'
