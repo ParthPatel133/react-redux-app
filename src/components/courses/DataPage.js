@@ -2,6 +2,7 @@ import {useSelector} from 'react-redux';
 
 const DataPage = () => {
   const courses = useSelector((state) => state.courses);
+  const data = [...courses];
 
   return (
     <div>

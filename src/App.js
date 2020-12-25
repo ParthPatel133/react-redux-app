@@ -5,6 +5,7 @@ import Header from './components/common/Header';
 import PageNotFound from './components/PageNotFound';
 import CoursesPage from './components/courses/CoursesPage';
 import DataPage from './components/courses/DataPage';
+import TableData from './components/TableData';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path='/about' component={AboutPage} />
         <Route path='/courses' component={CoursesPage} />
         <Route path='/data' component={DataPage} />
+        <Route path='/tabledata' component={TableData} />
         <Route component={PageNotFound} />
       </Switch>
     </div>
