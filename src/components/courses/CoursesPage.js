@@ -9,21 +9,31 @@ const CoursesPage = () => {
     description: '',
     dropdown: 'lime',
     date: '',
+    check1: true,
   });
   const dispatch = useDispatch();
   const courses = useSelector((state) => state.courses);
 
   const handleChange = (e) => {
+    const value =
+      e.target.type === 'checkbox' ? e.target.checked : e.target.value;
+    // const value = e.target.value;
     setCourseState({
       ...courseState,
-      [e.target.name]: e.target.value,
+      [e.target.name]: value,
     });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(createCourse(courseState));
-    setCourseState({title: '', description: '', dropdown: 'lime', date: ''});
+    setCourseState({
+      title: '',
+      description: '',
+      dropdown: 'lime',
+      date: '',
+      check1: false,
+    });
   };
 
   return (
@@ -64,6 +74,17 @@ const CoursesPage = () => {
           value={courseState.date}
           onChange={handleChange}
         />
+        <br />
+        <label>
+          checkbox1
+          <input
+            type='checkbox'
+            name='check1'
+            onChange={handleChange}
+            // value='test1'
+            checked={courseState.check1}
+          />
+        </label>
         <input type='submit' value='Save' />
         {courses.map((course, index) => (
           <div key={index}>
@@ -71,6 +92,7 @@ const CoursesPage = () => {
             <div>description: {course.description}</div>
             <div>Option: {course.dropdown} </div>
             <div>Date: {course.date} </div>
+            <div>Check1: {course.check1 ? 'true' : 'false'}</div>
             <br />
           </div>
         ))}
