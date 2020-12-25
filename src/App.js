@@ -5,8 +5,8 @@ import Header from './components/common/Header';
 import PageNotFound from './components/PageNotFound';
 import CoursesPage from './components/courses/CoursesPage';
 import DataPage from './components/courses/DataPage';
-import TableData from './components/TableData';
-
+import TableData from './components/table/TableData';
+import Table from './components/table/Table';
 function App() {
   return (
     <div className='container-fluid'>
@@ -17,6 +17,7 @@ function App() {
         <Route path='/courses' component={CoursesPage} />
         <Route path='/data' component={DataPage} />
         <Route path='/tabledata' component={TableData} />
+        <Route path='/finaltable' component={Table} />
         <Route component={PageNotFound} />
       </Switch>
     </div>

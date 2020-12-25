@@ -1,5 +1,5 @@
 import {NavLink} from 'react-router-dom';
-import TableData from '../TableData';
+import TableData from '../table/TableData';
 
 const Header = () => {
   const activeStyle = {color: '#F15B2A'};
@@ -17,8 +17,12 @@ const Header = () => {
         Data
       </NavLink>
       {' | '}
-      <NavLink to='/tabledata' activeStyle={TableData}>
+      <NavLink to='/tabledata' activeStyle={activeStyle}>
         TableData
+      </NavLink>
+      {' | '}
+      <NavLink to='/finaltable' activeStyle={activeStyle}>
+        FinalTable
       </NavLink>
       {' | '}
       <NavLink to='/about' activeStyle={activeStyle}>
