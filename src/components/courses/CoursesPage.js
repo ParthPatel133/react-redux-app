@@ -7,7 +7,8 @@ const CoursesPage = () => {
   const [courseState, setCourseState] = useState({
     title: '',
     description: '',
-    dropdown: '',
+    dropdown: 'lime',
+    date: '',
   });
   const dispatch = useDispatch();
   const courses = useSelector((state) => state.courses);
@@ -22,7 +23,7 @@ const CoursesPage = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(createCourse(courseState));
-    setCourseState({title: '', description: ''});
+    setCourseState({title: '', description: '', dropdown: 'lime', date: ''});
   };
 
   return (
@@ -57,12 +58,19 @@ const CoursesPage = () => {
           <option value='mango'>Mango</option>
         </select>
         <br />
+        <input
+          type='date'
+          name='date'
+          value={courseState.date}
+          onChange={handleChange}
+        />
         <input type='submit' value='Save' />
         {courses.map((course, index) => (
           <div key={index}>
             <div>title: {course.title}</div>
             <div>description: {course.description}</div>
             <div>Option: {course.dropdown} </div>
+            <div>Date: {course.date} </div>
             <br />
           </div>
         ))}
