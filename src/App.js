@@ -4,6 +4,7 @@ import AboutPage from './components/about/AboutPage';
 import Header from './components/common/Header';
 import PageNotFound from './components/PageNotFound';
 import CoursesPage from './components/courses/CoursesPage';
+import DataPage from './components/courses/DataPage';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route exact path='/' component={HomePage} />
         <Route path='/about' component={AboutPage} />
         <Route path='/courses' component={CoursesPage} />
+        <Route path='/data' component={DataPage} />
         <Route component={PageNotFound} />
       </Switch>
     </div>

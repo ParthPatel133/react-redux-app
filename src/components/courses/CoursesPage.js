@@ -12,7 +12,6 @@ const CoursesPage = () => {
     check1: true,
   });
   const dispatch = useDispatch();
-  const courses = useSelector((state) => state.courses);
 
   const handleChange = (e) => {
     const value =
@@ -86,16 +85,6 @@ const CoursesPage = () => {
           />
         </label>
         <input type='submit' value='Save' />
-        {courses.map((course, index) => (
-          <div key={index}>
-            <div>title: {course.title}</div>
-            <div>description: {course.description}</div>
-            <div>Option: {course.dropdown} </div>
-            <div>Date: {course.date} </div>
-            <div>Check1: {course.check1 ? 'true' : 'false'}</div>
-            <br />
-          </div>
-        ))}
       </form>
     </div>
   );
