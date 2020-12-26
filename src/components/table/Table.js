@@ -2,6 +2,8 @@ import {useMemo} from 'react';
 import {useTable} from 'react-table';
 import {useSelector} from 'react-redux';
 import '../../styles/App.css';
+//date formating in table with date-fns
+import {format} from 'date-fns';
 
 // store column and data with useMemo first
 //NOTE: can pass data in react-table using useSelector from redux
@@ -33,6 +35,10 @@ const Table = () => {
           {
             Header: 'Registered Date',
             accessor: 'date',
+            // Cell: ({value}) => {
+            //   return format(new Date(value), 'dd/mm/yyyy');
+            // },
+            //above code is for converting JSON date to wanted formate date using date-fns
           },
           {
             Header: 'Check Status',
