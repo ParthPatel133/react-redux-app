@@ -1,6 +1,9 @@
 import React, {useState} from 'react';
+import {useHistory} from 'react-router-dom';
+import axios from 'axios';
 
 const AddUser = () => {
+  const history = useHistory();
   const [user, setUser] = useState({
     fullname: '',
     username: '',
@@ -10,11 +13,14 @@ const AddUser = () => {
   });
 
   const onInputChange = (e) => {
-    setUser({[e.target.name]: e.target.value});
+    setUser({...user, [e.target.name]: e.target.value});
   };
 
-  const onSubmit = (e) => {
+  const onSubmit = async (e) => {
     e.preventDefault();
+
+    await axios.post('http://localhost:3001/users', user);
+    history.push('/');
   };
 
   const {fullname, username, email, website, phone} = user;
