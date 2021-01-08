@@ -6,7 +6,7 @@ const Home = () => {
 
   useEffect(() => {
     const getData = async () => {
-      const res = await axios.get('https://jsonplaceholder.typicode.com/users');
+      const res = await axios.get('http://localhost:3001/users');
       setUsers(res.data.reverse());
     };
     getData();
