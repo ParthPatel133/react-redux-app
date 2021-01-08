@@ -7,7 +7,7 @@ const Home = () => {
   useEffect(() => {
     const getData = async () => {
       const res = await axios.get('https://jsonplaceholder.typicode.com/users');
-      setUsers(res.data);
+      setUsers(res.data.reverse());
     };
     getData();
   }, []);
@@ -30,7 +30,7 @@ const Home = () => {
             {users.map((user, index) => (
               <tr key={index}>
                 <th scope='row'>{index + 1}</th>
-                <td>{user.name}</td>
+                <td>{user.name || user.fullname}</td>
                 <td>{user.username}</td>
                 <td>{user.email}</td>
                 <td>
