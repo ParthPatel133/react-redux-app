@@ -1,7 +1,7 @@
 const About = () => {
   return (
     <div className='container'>
-      <div className='py-4'>
+      <div className='py-4 mt-5'>
         <h1>About page</h1>
         <p className='lead'>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias

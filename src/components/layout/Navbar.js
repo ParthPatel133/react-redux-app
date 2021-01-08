@@ -4,7 +4,7 @@ import {Link, NavLink} from 'react-router-dom';
 const Navbar = () => {
   return (
     <div>
-      <nav className='navbar navbar-expand-lg fixed-top navbar-dark bg-dark'>
+      <nav className='navbar navbar-expand-lg  navbar-dark bg-dark'>
         <div className='container-fluid'>
           <Link className='navbar-brand' to='/'>
             ReactUser
@@ -39,7 +39,9 @@ const Navbar = () => {
               </li>
             </ul>
           </div>
-          <button className='btn btn-outline-light '>Add User</button>
+          <Link to='/users/add' className='btn btn-outline-light '>
+            Add User
+          </Link>
         </div>
       </nav>
     </div>
