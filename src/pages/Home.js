@@ -14,7 +14,7 @@ const Home = () => {
 
   return (
     <div className='container'>
-      <div className='py-4'>
+      <div className='py-3 mt-5'>
         <h1>home page</h1>
         <table className='table border shadow'>
           <thead className='table-dark'>
@@ -29,7 +29,7 @@ const Home = () => {
           <tbody>
             {users.map((user, index) => (
               <tr key={index}>
-                <th scope='raw'>{index + 1}</th>
+                <th scope='row'>{index + 1}</th>
                 <td>{user.name}</td>
                 <td>{user.username}</td>
                 <td>{user.email}</td>
