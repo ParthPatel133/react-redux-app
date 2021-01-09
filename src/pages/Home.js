@@ -30,13 +30,28 @@ const Home = () => {
             {users.map((user, index) => (
               <tr key={index}>
                 <th scope='row'>{index + 1}</th>
-                <td>{user.name || user.fullname}</td>
+                <td>{user.fullname}</td>
                 <td>{user.username}</td>
                 <td>{user.email}</td>
                 <td>
-                  <Link class='btn btn-primary mr-2'>View</Link>
-                  <Link class='btn btn-outline-primary mr-2 '>Edit</Link>
-                  <Link class='btn btn-danger'>Delete</Link>
+                  <Link
+                    to={`users/${user.id}`}
+                    className='btn btn-primary mr-2'
+                  >
+                    View
+                  </Link>
+                  <Link
+                    to={`users/edit/${user.id}`}
+                    className='btn btn-outline-primary mr-2 '
+                  >
+                    Edit
+                  </Link>
+                  <Link
+                    to={`users/delete/${user.id}`}
+                    className='btn btn-danger'
+                  >
+                    Delete
+                  </Link>
                 </td>
               </tr>
             ))}
