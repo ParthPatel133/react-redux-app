@@ -229,14 +229,6 @@
         "catchPhrase": "Centralized empowering task-force",
         "bs": "target end-to-end models"
       }
-    },
-    {
-      "fullname": "demo",
-      "username": "demo",
-      "email": "demo@demo.com",
-      "phone": "12334567",
-      "website": "demo",
-      "id": 11
     }
   ]
 }

@@ -4,7 +4,7 @@ const NotFound = () => {
   return (
     <div
       className=' justify-content-center min-vh-100 d-flex  '
-      style={{'overflow-y': 'hidden'}}
+      style={{overflowY: 'hidden'}}
     >
       <h1 className='display-1 align-middle  align-self-center '>
         Page Not Found

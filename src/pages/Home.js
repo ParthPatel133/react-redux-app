@@ -5,12 +5,23 @@ const Home = () => {
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
-    const getData = async () => {
-      const res = await axios.get('http://localhost:3001/users');
-      setUsers(res.data.reverse());
+    loadUsers();
+    return () => {
+      setUsers([]);
     };
-    getData();
+    //learning about cleanUp subscription
+    //*****MOST IMPORTANT DO cleanUp ELSE THERE IS Memory LEAK **********/
   }, []);
+
+  const loadUsers = async () => {
+    const res = await axios.get('http://localhost:3001/users');
+    setUsers(res.data.reverse());
+  };
+
+  const deleteUser = async (id) => {
+    await axios.delete(`http://localhost:3001/users/${id}`);
+    loadUsers();
+  };
 
   return (
     <div className='container'>
@@ -47,7 +58,8 @@ const Home = () => {
                     Edit
                   </Link>
                   <Link
-                    to={`users/delete/${user.id}`}
+                    to='/'
+                    onClick={() => deleteUser(user.id)}
                     className='btn btn-danger'
                   >
                     Delete
