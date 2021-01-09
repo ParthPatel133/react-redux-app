@@ -7,6 +7,7 @@ import {BrowserRouter, Route, Switch} from 'react-router-dom';
 import NotFound from './pages/NotFound';
 import AddUser from './components/users/AddUser';
 import EditUser from './components/users/EditUser';
+import User from './components/users/User';
 
 export default function App() {
   return (
@@ -17,6 +18,7 @@ export default function App() {
           <Route exact path='/' component={Home} />
           <Route exact path='/about' component={About} />
           <Route exact path='/contact' component={Contact} />
+          <Route exact path='/users/:id' component={User} />
           <Route exact path='/users/add' component={AddUser} />
           <Route exact path='/users/edit/:id' component={EditUser} />
           <Route component={NotFound} />
