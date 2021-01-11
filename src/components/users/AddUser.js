@@ -12,6 +12,8 @@ const AddUser = () => {
     website: '',
   });
 
+  const {fullname, username, email, website, phone} = user;
+
   const onInputChange = (e) => {
     setUser({...user, [e.target.name]: e.target.value});
   };
@@ -23,7 +25,6 @@ const AddUser = () => {
     history.push('/');
   };
 
-  const {fullname, username, email, website, phone} = user;
   return (
     <div className='container'>
       <div className='w-75 mx-auto shadow p-5'>

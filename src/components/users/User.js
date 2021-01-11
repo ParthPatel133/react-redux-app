@@ -15,7 +15,10 @@ const User = () => {
 
   useEffect(() => {
     loadUser();
-  });
+    return () => {
+      setUser({fullname: '', username: '', email: '', phone: '', website: ''});
+    };
+  }, []);
 
   const loadUser = async () => {
     const res = await axios.get(`http://localhost:3001/users/${id}`);
